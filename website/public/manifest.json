@@ -1,0 +1,16 @@
+{
+  "short_name": "IAÊ",
+  "name": "IAÊ Viagens e Excursões",
+  "icons": [
+    {
+      "sizes": "48x48 72x72 96x96 128x128 256x256 512x512",
+      "type": "image/svg+xml",
+      "src": "images/favicon.svg",
+      "purpose": "any"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}

@@ -1,0 +1,13 @@
+{
+  "summary": "Activities list",
+  "description": "List all activities available.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "type": "string-not-empty"
+    }
+  },
+  "required": [
+    "type"
+  ]
+}

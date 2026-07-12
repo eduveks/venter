@@ -1,0 +1,83 @@
+/**
+
+HERE YOUR CUSTOM CSS
+
+**/
+
+:root {
+    --primary-color: #581B9C;
+    --secondary-color: #69FF46;
+}
+
+.navbar, .navbar-inverse {
+    background-color: var(--primary-color) !important;
+}
+
+.dev .navbar, .dev .navbar-inverse {
+    background-color: #333333 !important;
+}
+
+.top-nav > li > a:hover,
+.top-nav > li > a:focus,
+.top-nav > li.active > a,
+.top-nav > .open > a,
+.top-nav > .open > a:hover,
+.top-nav > .open > a:focus {
+    color: #fff;
+    background-color: var(--primary-color);
+}
+
+.btn-primary {
+    color: #ffffff;
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+    color: var(--primary-color);
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+}
+
+.btn-primary.focus, .btn-primary:focus {
+    color: var(--secondary-color);
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-primary.active, .btn-primary:active, .open>.dropdown-toggle.btn-primary {
+    color: #ffffff !important;
+    background-color: var(--secondary-color) !important;
+    border-color: var(--secondary-color) !important;
+}
+
+.panel-primary > .panel-heading {
+    color: #fff;
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.panel-primary {
+    border-color: var(--primary-color);
+}
+
+a, .btn-link, .btn-link:focus {
+    color: var(--primary-color);
+}
+
+.btn-link:hover {
+    color: var(--secondary-color);
+}
+
+.search-content .btn-search,
+.search-content .btn-filter,
+#netuno_user_form .btn-auth-history,
+#netuno_user_form .btn-auth-history-unlock {
+    background-color: var(--primary-color);
+}
+
+
+.bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-primary,
+.bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-primary {
+    background: var(--primary-color) !important;
+}
