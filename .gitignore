@@ -9,6 +9,7 @@ node_modules/
 package-lock.json
 yarn.lock
 pnpm-lock.yaml
+bun.lock
 
 /trash/*
 
@@ -20,5 +21,6 @@ pnpm-lock.yaml
 config/_development.json
 config/_production.json
 
-storage/database
+/storage/database
+/storage/filesystem/server/pix.png
 
