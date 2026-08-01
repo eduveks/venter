@@ -1,0 +1,70 @@
+Table activity {
+  id int [pk, increment]
+  category_id int [not null, ref: > category.id, note: 'Categoria']
+  cover text [note: 'Capa']
+  date_end date [note: 'Data Final']
+  date_start date [note: 'Data Inicial']
+  description text [note: 'Descrição']
+  destination_id int [not null, ref: > city.id, note: 'Destino']
+  itinerary text [note: 'Roteiro']
+  name varchar(250) [not null, note: 'Nome']
+  price_regular real [not null, note: 'Preço Normal']
+  price_teacher real [note: 'Preço Professor']
+  Note: 'Atividade'
+}
+
+Table category {
+  id int [pk, increment]
+  code varchar(250) [note: 'Código']
+  description text [note: 'Descrição']
+  name varchar(250) [not null, note: 'Nome']
+  parent_id int [ref: > category.id, note: 'Pai']
+  Note: 'Categoria'
+}
+
+Table city {
+  id int [pk, increment]
+  name varchar(250) [not null, unique, note: 'Nome']
+  state_id int [not null, ref: > state.id, note: 'Estado']
+  Note: 'Cidade'
+}
+
+Table member {
+  id int [pk, increment]
+  activity_id int [not null, ref: > activity.id, note: 'Atividade']
+  installments int [note: 'Prestações']
+  people_id int [not null, ref: > people.id, note: 'Pessoa']
+  since date [not null, note: 'Desde']
+  Note: 'Membro'
+}
+
+Table payment {
+  id int [pk, increment]
+  amount real [not null, note: 'Valor']
+  due_date date [not null, note: 'Vencimento']
+  installment_number int [note: 'Prestação de Número']
+  installments_total int [note: 'Prestações na Totalidae']
+  member_id int [not null, ref: > member.id, note: 'Membro']
+  paid boolean [note: 'Pago']
+  paid_on timestamp [note: 'Pago Em']
+  Note: 'Pagamento'
+}
+
+Table people {
+  id int [pk, increment]
+  avatar text [note: 'Avatar']
+  email varchar(250) [unique, note: 'Email']
+  name varchar(250) [not null, note: 'Nome']
+  people_user_id int [not null, unique, note: 'Utilizador']
+  recovery_key varchar(250) [note: 'Chave de Recuperação']
+  recovery_limit timestamp [note: 'Limite de Recuperação']
+  Note: 'Pessoa'
+}
+
+Table state {
+  id int [pk, increment]
+  code varchar(250) [not null, unique, note: 'Sigla']
+  name varchar(250) [not null, unique, note: 'Nome']
+  Note: 'Estado'
+}
+
