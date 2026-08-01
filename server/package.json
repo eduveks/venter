@@ -28,7 +28,8 @@
       "default": "./templates/*"
     }
   },
-  "dependencies": {
-    "@netuno/server-types": "^1.4.2"
+  "dependencies": {},
+  "devDependencies": {
+    "@netuno/server-types": "^1.4.3"
   }
 }

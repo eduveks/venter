@@ -4,12 +4,12 @@
   "workspaces": {
     "": {
       "name": "server",
-      "dependencies": {
-        "@netuno/server-types": "^1.4.0",
+      "devDependencies": {
+        "@netuno/server-types": "latest",
       },
     },
   },
   "packages": {
-    "@netuno/server-types": ["@netuno/server-types@1.4.2", "", {}, "sha512-C0xiNtDEatHk0vyr3z+4tJF1rB7NIUgR8krViezpPJF+QaxN+gaZWl/9Cq3uRhUOJFF9JB2ik0+fF0hm/tsRjA=="],
+    "@netuno/server-types": ["@netuno/server-types@1.4.3", "", {}, "sha512-Ke/jxrBqvBRaI7PBwuftTaVPvadVUg6kjqxA7LRfrrN6hOTVDnIMQHgJrh2wxnzF5EeRmAHmS6Ut5T/7G1Mimg=="],
   }
 }
