@@ -1,15 +1,20 @@
 import React from "react";
 import { createRoot } from 'react-dom/client';
 
+import _service from "@netuno/service-client";
+
 import { ConfigProvider, theme } from "antd";
 
-import DashboardContainer from "./containers/DashboardContainer/index.jsx";
+import MainDashboard from "./dashboards/MainDashboard";
 
-const dashboardDiv = createRoot(document.getElementById("app-dashboard"));
-const dashboardContainer = dashboardDiv ? dashboardDiv.render(<DashboardContainer />) : false;
+_service.config({
+    prefix: netuno.config.urlServices
+});
 
-if (dashboardContainer) {
-  dashboardContainer.render(
+const dashboardMainDiv = createRoot(document.getElementById("app-dashboard-main"));
+
+if (dashboardMainDiv) {
+  dashboardMainDiv.render(
     <ConfigProvider
       theme={{
         token: {
@@ -20,7 +25,7 @@ if (dashboardContainer) {
         algorithm: theme.defaultAlgorithm
       }}
     >
-      <DashboardContainer />
+      <MainDashboard />
     </ConfigProvider>
   );
 }
@@ -28,7 +33,7 @@ if (dashboardContainer) {
 netuno.addNavigationLoad(() => {
     $('[netuno-navigation]').find('a').on('netuno:click', (e)=> {
         const link = $(e.target);
-        if (dashboardContainer && link.is('[netuno-navigation-dashboard]')) {
+        if (dashboardMainDiv && link.is('[netuno-navigation-dashboard]')) {
             // Menu > Dashboard > Clicked!
         }
     });
