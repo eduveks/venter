@@ -23,4 +23,5 @@ config/_production.json
 
 /storage/database
 /storage/filesystem/server/pix.png
+/storage/filesystem/server/email/template/*
 
