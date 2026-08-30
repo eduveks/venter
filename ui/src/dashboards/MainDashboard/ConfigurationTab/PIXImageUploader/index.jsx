@@ -27,7 +27,7 @@ function PIXImageUploader({}) {
     };
     return (
         <div className="pix-image-uploader">
-            <Title level={3}>Imagem PIX</Title>
+            <Title level={4}>Imagem PIX</Title>
             <div className="pix-image-uploader__preview">
                 <img src={_service.url("pix") + "?" + previewUpdateCounter} alt="" />
             </div>
