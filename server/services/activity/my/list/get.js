@@ -32,7 +32,7 @@ for (const dbActivity of dbActivities) {
             .set('description', dbActivity.getString('description'))
             .set('date_start', dbActivity.getSQLDate('date_start'))
             .set('date_end', dbActivity.getSQLDate('date_end'))
-            .set('price', dbActivity.getFloat('price_regular'))
+            .set('price',  people.isTeacher() ? dbActivity.getFloat('price_teacher') : dbActivity.getFloat('price_regular'))
             .set('member_since', dbActivity.getSQLDate('member_since'))
     )
 }
