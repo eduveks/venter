@@ -4,6 +4,7 @@ import { createRoot } from 'react-dom/client';
 import _service from "@netuno/service-client";
 
 import { ConfigProvider, theme } from "antd";
+import antLocale_ptBR from "antd/lib/locale/pt_BR";
 
 import MainDashboard from "./dashboards/MainDashboard";
 
@@ -18,12 +19,13 @@ if (dashboardMainDiv) {
     <ConfigProvider
       theme={{
         token: {
-          colorPrimary: '#5b5ce1',
-          colorLink: '#5b5ce1',
+          colorPrimary: '#2B046E',
+          colorLink: '#2B046E',
           borderRadius: 5,
         },
         algorithm: theme.defaultAlgorithm
       }}
+      locale={antLocale_ptBR}
     >
       <MainDashboard />
     </ConfigProvider>
