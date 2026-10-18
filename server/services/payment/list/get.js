@@ -37,6 +37,7 @@ for (const dbPayment of dbPayments) {
             .set('installments_total', dbPayment.getInt('installments_total'))
             .set('paid', dbPayment.getBoolean('paid'))
             .set('paid_on', dbPayment.getSQLDate('paid_on'))
+            .set('overdue', dbPayment.getSQLDate('due_date').compareTo(_db.date()) < 0)
     )
 }
 

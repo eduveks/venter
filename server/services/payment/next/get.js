@@ -31,5 +31,6 @@ _out.json(
         .set('amount', dbPayment.getDouble('amount'))
         .set('installment_number', dbPayment.getInt('installment_number'))
         .set('installments_total', dbPayment.getInt('installments_total'))
+        .set('overdue', dbPayment.getSQLDate('due_date').compareTo(_db.date()) < 0)
 )
 
