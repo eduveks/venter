@@ -7,7 +7,7 @@ function FooterBase() {
     return (
         <>
             {!_auth.isLogged() &&
-                <Footer>© netuno.org {new Date().getFullYear()}</Footer>
+                <Footer>© venter.com.br {new Date().getFullYear()}</Footer>
             }
         </>
     );
