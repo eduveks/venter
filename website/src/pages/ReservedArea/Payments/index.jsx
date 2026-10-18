@@ -40,7 +40,7 @@ function Payments() {
                 { payments.length === 0 && <>
                     <Alert title={`Ainda não participa de alguma atividade.`} type="warning" showIcon />
                 </>}
-                { payments.length > 0 && payments.map(({activity_name, activity_date_start, activity_date_end, activity_price, due_date, amount, installment_number, installments_total, paid_on, paid}) => (
+                { payments.length > 0 && payments.map(({activity_name, activity_date_start, activity_date_end, activity_price, due_date, amount, installment_number, installments_total, paid_on, paid, overdue}) => (
                     <Card title={activity_name +' - '+ DateFormatter.days(activity_date_start, activity_date_end) +' dias'} style={{marginBottom: '20px'}}>
                         <Row style={{marginBottom: '20px'}}>
                             <Col span={8}>
@@ -53,8 +53,8 @@ function Payments() {
                                 Valor:<br/><b>R$ {amount}</b>
                             </Col>
                         </Row>
-                        {!paid && <Alert title={`Aguardando confirmação do pagamento.`} type="warning" showIcon />}
-                        {paid && <Alert title={<span>Pagamento realizado em <b>{DateFormatter.toFullText(paid_on)}</b>.</span>} type="success" showIcon />}
+                        {!paid && <Alert title={`Aguardando o pagamento.`} type={overdue ? "error" : "warning"} showIcon />}
+                        {paid && <Alert title={<span>Pagamento feito em <b>{DateFormatter.toFullText(paid_on)}</b>.</span>} type="success" showIcon />}
                         <Card style={{marginTop: '20px'}}>
                             <div style={{marginBottom: '10px'}}><InfoCircleOutlined /> Detalhes da Atividade</div>
                             <Row>

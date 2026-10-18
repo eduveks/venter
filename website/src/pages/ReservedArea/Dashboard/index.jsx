@@ -9,12 +9,14 @@ import _service from "@netuno/service-client";
 import globalNotification from "../../../common/globalNotification.js";
 import DateFormatter from "../../../common/DateFormatter.js";
 import {InfoCircleOutlined} from "@ant-design/icons";
+import {useNavigate} from "react-router-dom";
 
 const { Title } = Typography;
 
 function Dashboard({loggedUserInfo}) {
   const [payment, setPayment] = useState(null);
   const [paymentLoading, setPaymentLoading] = useState(false);
+  const navigate = useNavigate();
   useEffect(() => {
     if (!loggedUserInfo) {
       return;
@@ -63,21 +65,21 @@ function Dashboard({loggedUserInfo}) {
                     Valor:<br/><b>R$ {payment.amount}</b>
                   </Col>
                 </Row>
-                <Alert title={`Aguardando confirmação do pagamento.`} type="warning" showIcon />
+                <Alert title={`Aguardando o pagamento.`} type={payment.overdue ? "error" : "warning"} showIcon />
               </Card>
             </>
         }
         <p>Participe das nossas atividades especiais, explore e encontre a viagem ideal.</p>
         <Row gutter={[20, 20]}>
           <Col xs={24} lg={12}>
-            <div className="dashboard-activity-card">
+            <div className="dashboard-activity-card" onClick={() => navigate('/academic')}>
               <Title level={2}>Atividades Acadêmicas</Title>
               <p>Participe das nossas atividades especiais, explore e encontre a viagem ideal.</p>
               <img src={"/images/academic-image.jpg"} />
             </div>
           </Col>
           <Col xs={24} lg={12}>
-            <div className="dashboard-activity-card">
+            <div className="dashboard-activity-card" onClick={() => navigate('/tourism')}>
               <Title level={2}>Atividades Turísticas</Title>
               <p>Participe das nossas atividades especiais, explore e encontre a viagem ideal.</p>
               <img src={"/images/tourism-image.jpg"} />
