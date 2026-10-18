@@ -1,28 +1,30 @@
+import {_db, _exec, _header, _out, _req, _storage} from "@netuno/server-types";
 
-let dbPeople = null
+let dbPeople = null;
 
 if (_req.getString('uid')) {
-  dbPeople = _db.get('people', _req.getString('uid'))
+  dbPeople = _db.get('people', _req.getString('uid'));
 }
 
-if (!dbPeople) {
-  _header.status(404)
-  _exec.stop()
+if (dbPeople === null) {
+  _header.status(404);
+  _exec.stop();
+  throw new Error("People not found.");
 }
 
-const dbAvatarName = dbPeople.getString('avatar')
+const dbAvatarName = dbPeople.getString('avatar');
 
 const storageAvatarFile = _storage.database(
   'people',
   'avatar',
   dbAvatarName
-)
+);
 
-if (storageAvatarFile.extension() == "jpg" || storageAvatarFile.extension() == "jpeg") {
-  _header.contentTypeJPG()
+if (storageAvatarFile.extension() === "jpg" || storageAvatarFile.extension() === "jpeg") {
+  _header.contentTypeJPG();
 } else {
-  _header.contentTypePNG()
+  _header.contentTypePNG();
 }
-_header.noCache()
+_header.noCache();
 
-_out.copy(storageAvatarFile.inputStream())
+_out.copy(storageAvatarFile.inputStream());

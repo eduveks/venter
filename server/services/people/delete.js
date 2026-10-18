@@ -3,28 +3,30 @@
  *  Comment or delete the line below to allow this service execution. 
  */
 
-_exec.stop()
+import {_db, _exec, _out, _user, _val} from "@netuno/server-types";
+
+_exec.stop();
 
 /** * **/
 
 const dbPeople = _db.queryFirst(`
     SELECT * FROM people WHERE people_user_id = ${_db.param("int")}
-`, _user.id)
+`, _user.id);
 
 if (dbPeople) {
   _db.delete(
     "people",
-    dbClient.getInt("id")
-  )
+    dbPeople.getInt("id")
+  );
   _user.remove(dbPeople.getInt("people_user_id"));
   _out.json(
     _val.map()
       .set("result", true)
-  )
+  );
 } else {
   _out.output(404);
   _out.json(
     _val.map()
       .set("error", "not-exist")
-  )
+  );
 }

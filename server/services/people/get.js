@@ -1,12 +1,14 @@
+import {_db, _exec, _group, _header, _out, _user, _val} from "@netuno/server-types";
+
 const dbPeople = _db.queryFirst(`
   SELECT *
   FROM people
   WHERE people_user_id = ${_db.param("int")}
-`, _user.id)
+`, _user.id);
 
 if (!dbPeople) {
-  _header.status(404)
-  _exec.stop()
+  _header.status(404);
+  _exec.stop();
 }
 
 const data = _val.map()
@@ -14,8 +16,8 @@ const data = _val.map()
       .set("name", dbPeople.getString("name"))
       .set("email", dbPeople.getString("email"))
       .set("username", _user.get(_user.id()).getString("user"))
-      .set("avatar", dbPeople.getString("avatar") != '')
-      .set("group", _group.code())
+      .set("avatar", dbPeople.getString("avatar") !== '')
+      .set("group", _group.code());
 
 _out.json(
   _val.map()
