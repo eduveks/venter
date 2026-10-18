@@ -83,7 +83,7 @@ export default function App() {
           primaryColor: '#2B046E',
           colorBgBase: '#eff8ff',
           colorBgLayout: '#ffffff',
-          colorBgMask: 'rgba(100, 20, 159, 0.75)',
+          colorBgMask: 'rgba(43, 4, 110, 0.75)',
           colorTextHeading: '#2B046E',
         },
         components: {
