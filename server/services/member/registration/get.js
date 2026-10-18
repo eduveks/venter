@@ -1,5 +1,7 @@
 import {_db, _exec, _header, _out, _req, _time, _val} from '@netuno/server-types'
 
+import people from '#core/lib/people.js'
+
 const dbActivity = _db.get('activity', _req.getString('uid'))
 
 if (!dbActivity) {
@@ -15,7 +17,9 @@ if (installments >= 1) {
     installments++
 }
 
-const amount = (dbActivity.getDouble("price_regular") / installments)
+const price = people.isTeacher() ? dbActivity.getDouble('price_teacher') : dbActivity.getDouble('price_regular')
+
+const amount = (price / installments)
 
 _out.json(
     _val.map()

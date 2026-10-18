@@ -26,7 +26,9 @@ const dbMemberInserted = _db.form('member')
     .set('since', _db.date())
     .insert()
 
-const amount = (dbActivity.getDouble("price_regular") / installments)
+const price = people.isTeacher() ? dbActivity.getDouble('price_teacher') : dbActivity.getDouble('price_regular')
+
+const amount = (price / installments)
 
 for (let i = 0; i < installments; i++) {
     _db.form('payment')
