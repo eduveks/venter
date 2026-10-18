@@ -76,19 +76,19 @@ export default function App() {
       locale={antLocale_ptPT}
       theme={{
         token: {
-          colorPrimary: '#64149f',
-          colorLink: '#64149f',
+          colorPrimary: '#2B046E',
+          colorLink: '#2B046E',
           fontSize: 16,
           borderRadius: 20,
-          primaryColor: '#64149f',
+          primaryColor: '#2B046E',
           colorBgBase: '#eff8ff',
           colorBgLayout: '#ffffff',
           colorBgMask: 'rgba(100, 20, 159, 0.75)',
-          colorTextHeading: '#64149f',
+          colorTextHeading: '#2B046E',
         },
         components: {
           Button: {
-            primaryColor: '#69FF46',
+            primaryColor: '#FEBF34',
           },
           Layout: {
             headerBg: '#f0f2f5',
