@@ -36,8 +36,8 @@ export default function RecoverModal(props) {
       fail: () => {
         setSubmitting(false);
         api.error({
-          message: 'Erro na Alteração da Palavra-Passe',
-          description: 'Não foi possível alterar a palavra-passe, contacte-nos através do chat de suporte.',
+          message: 'Erro na Alteração da Senha',
+          description: 'Não foi possível alterar a senha, contacte-nos através do chat de suporte.',
         });
       }
     });

@@ -120,7 +120,7 @@ export default function Register(props) {
       <Content className="register-container">
         {contextHolder}
         <div className="content-title">
-          <Title>Criar conta.</Title>
+          <Title>Criar Conta</Title>
         </div>
         <div className="content-body">
           <p>Crie uma conta para poder aceder à sua área reservada.</p>
@@ -183,27 +183,27 @@ export default function Register(props) {
               <Input disabled={submitting} maxLength={250} />
             </Form.Item>
             <Form.Item
-              label="Palavra-passe"
+              label="Senha"
               name="password"
               rules={[
-                { required: true, message: 'Insira a palavra-passe.' },
-                { type: 'string', message: 'Palavra-Passe deverá ter entre 8 a 25 caracteres.', min: 8, max: 25 },
+                { required: true, message: 'Insira a senha.' },
+                { type: 'string', message: 'Senha deverá ter entre 8 a 25 caracteres.', min: 8, max: 25 },
               ]}
             >
               <PasswordInput disabled={submitting} maxLength={25} />
             </Form.Item>
             <Form.Item
-              label="Confirmar a Palavra-passe"
+              label="Confirmar a Senha"
               name="password_confirm"
               rules={[
-                { required: true, message: 'Insira a confirmação da palavra-passe.' },
-                { type: 'string', message: 'Palavra-Passe deverá ter entre 8 a 25 caracteres.', min: 8, max: 25 },
+                { required: true, message: 'Insira a confirmação da senha.' },
+                { type: 'string', message: 'Senha deverá ter entre 8 a 25 caracteres.', min: 8, max: 25 },
                 ({ getFieldValue }) => ({
                   validator(_, value) {
                     if (!value || getFieldValue('password') === value) {
                       return Promise.resolve();
                     }
-                    return Promise.reject('As palavras-passes não são iguais.');
+                    return Promise.reject('As senhas não são iguais.');
                   },
                 })
               ]}

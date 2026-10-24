@@ -167,14 +167,14 @@ function Profile({loggedUserInfo, loggedUserInfoReloadAction}) {
             label="Confirmar nova Palavra-passe"
             name="password_confirm"
             rules={[
-              { required: passwordRequired, message: 'Insira a confirmação da nova palavra-passe.' },
-              { type: 'string', message: 'Palavra-Passe deverá ter entre 8 a 25 caracteres.', min: 8, max: 25 },
+              { required: passwordRequired, message: 'Insira a confirmação da nova senha.' },
+              { type: 'string', message: 'Senha deverá ter entre 8 a 25 caracteres.', min: 8, max: 25 },
               ({ getFieldValue }) => ({
                 validator(_, value) {
                   if (!value || getFieldValue('password') === value) {
                     return Promise.resolve();
                   }
-                  return Promise.reject('As palavras-passes não são iguais.');
+                  return Promise.reject('As senhas não são iguais.');
                 },
               })
             ]}

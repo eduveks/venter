@@ -127,7 +127,7 @@ function Login({loggedUserInfoAction}) {
       <Layout>
         <Content className="login-container">
           <div className="content-title">
-            <Title>Iniciar sessão.</Title>
+            <Title>Entrar</Title>
           </div>
           {contextHolder}
           <div className="content-body">
@@ -172,9 +172,9 @@ function Login({loggedUserInfoAction}) {
               </Form.Item>
 
               <Form.Item
-                label="Palavra-passe"
+                label="Senha"
                 name="password"
-                rules={[{ required: true, message: 'Insira a palavra-passe.' }]}
+                rules={[{ required: true, message: 'Insira a senha.' }]}
               >
                 <Input.Password />
               </Form.Item>
