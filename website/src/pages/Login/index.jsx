@@ -161,7 +161,7 @@ function Login({loggedUserInfoAction}) {
                 </Form.Item> }
 
               <Form.Item
-                label="Utilizador"
+                label="Usuário"
                 name="username"
                 rules={[
                   { required: true, message: 'Insira o seu usuário.' },

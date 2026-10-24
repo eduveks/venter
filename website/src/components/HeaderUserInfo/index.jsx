@@ -29,17 +29,17 @@ function HeaderUserInfo({loggedUserInfo, loggedUserInfoReload, loggedUserInfoAct
           loggedUserInfoAction(response.json.data);
         } else {
           api.warning({
-            message: 'Dados do Utilizador',
+            message: 'Dados do Usuário',
             description: response.json.error,
           });
           setLoading(false);
         }
       },
       fail: (e) => {
-        console.error('Dados do Utilizador', e);
+        console.error('Dados do Usuário', e);
         setLoading(false);
         api.error({
-          message: 'Dados do Utilizador',
+          message: 'Dados do Usuário',
           description: 'Ocorreu um erro a carregar os dados, por favor tente novamente.',
         });
         _auth.logout();

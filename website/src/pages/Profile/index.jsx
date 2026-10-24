@@ -70,7 +70,7 @@ function Profile({loggedUserInfo, loggedUserInfoReloadAction}) {
           loggedUserInfoReloadAction();
         } else {
           api.warning({
-            message: 'Utilizador existente',
+            message: 'Usuário existente',
             description: response.json.error,
           });
           setSubmitting(false);

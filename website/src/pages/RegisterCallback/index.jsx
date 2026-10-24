@@ -117,8 +117,8 @@ export default function Register(props) {
           }
           if (e.json.error === 'user-already-exists') {
             return api.warning({
-              message: 'Utilizador Existente',
-              description: 'Este utilizador já existe, faça a recuperação do acesso no ecrã de login ou escolha outro.',
+              message: 'Usuário Existente',
+              description: 'Este usuário já existe, faça a recuperação do acesso no ecrã de login ou escolha outro.',
             });
           }
         }
@@ -176,7 +176,7 @@ export default function Register(props) {
               <Input disabled={submitting} maxLength={250} />
             </Form.Item>
             <Form.Item
-              label="Utilizador"
+              label="Usuário"
               name="username"
               rules={[
                 { required: true, message: 'Insira o seu usuário.' },
