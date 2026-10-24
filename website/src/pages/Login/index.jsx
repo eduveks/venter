@@ -18,6 +18,7 @@ import { bindActionCreators } from 'redux';
 import { loggedUserInfoAction } from '../../redux/actions';
 
 import 'altcha';
+import 'altcha/i18n/pt-br';
 
 import './index.less';
 
@@ -185,7 +186,8 @@ function Login({loggedUserInfoAction}) {
               { Config.authAltcha() && <Form.Item>
                 <altcha-widget
                     ref={altcha}
-                    challengeurl={_service.url('/_altcha')}
+                    challenge={_service.url('/_altcha')}
+                    language="pt-br"
                     delay={1}
                     hidelogo={true}
                     hidefooter={true}
