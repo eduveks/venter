@@ -24,13 +24,17 @@ function HeaderBase({ collapsed, headerButtonMode }) {
             {!_auth.isLogged() &&
                 <Link to="/" className="logo-container"><img alt="logo" src="/images/logo.svg" /></Link>
             }
-            {headerButtonMode === '/login' ?
+            {headerButtonMode === '/' ?
+              <Link to="/login">
+                <Button type="primary">Entrar</Button>
+              </Link>
+              : headerButtonMode === '/login' ?
                 <Link to="/register">
-                    <Button type="primary">Criar conta</Button>
+                    <Button type="primary">Criar Conta</Button>
                 </Link>
                 : headerButtonMode === '/register' ?
                     <Link to="/login">
-                        <Button type="primary">Iniciar sessão</Button>
+                        <Button type="primary">Entrar</Button>
                     </Link>
                     : _auth.isLogged() &&
                     <Menu
