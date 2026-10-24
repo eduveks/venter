@@ -16,6 +16,7 @@ import HeaderBase from './base/HeaderBase';
 import SiderMenu from "./base/SiderMenu";
 import FooterBase from "./base/FooterBase";
 
+import Home from './pages/Home';
 import LoginPage from './pages/Login';
 import Register from './pages/Register';
 import LoginCallback from './pages/LoginCallback';
@@ -30,17 +31,6 @@ import globalNotification from "./common/globalNotification.js";
 import './styles/App.less';
 
 const { Content } = Layout;
-
-const NavWithAuthCheck = () => {
-  if (_auth.isLogged()) {
-    return (
-      <Navigate to="/reserved-area" />
-    );
-  }
-  return(
-    <Navigate to="/login" />
-  );
-};
 
 export default function App() {
   const [headerButtonMode, setHeaderButtonMode] = useState('login');
@@ -114,7 +104,7 @@ export default function App() {
               {contextHolder}
               <Switch>
                 {/** PUBLIC **/}
-                <Route exact path="/" element={<NavWithAuthCheck/>}/>
+                <Route exact path="/" element={<Home/>}/>
                 <Route path="/login/:provider" element={<LoginCallback/>} />
                 <Route path="/register/:provider" element={<RegisterCallback/>} />
                 <Route path="/profile" element={<Profile/>} />
